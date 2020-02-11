@@ -82,21 +82,35 @@ end
 #     puts "Sorry, the object doesn't understand the 'talk' message."
 # end  
 
-print "Information desired: "
-request = gets.chomp
+# print "Information desired: "
+# request = gets.chomp
 
 # if request == 'venue'
 #     puts ticket.venue
 # elsif request == 'performer'
 #     puts ticket.performer 
     
-if ticket.respond_to?(request)
-    puts ticket.send(request)
-else
-    puts "No such information available"
+# if ticket.respond_to?(request)
+#     puts ticket.send(request)
+# else
+#     puts "No such information available"
+# end
+
+
+def two_or_more(a,b,*c)
+    p a, b, c
 end
 
+def ticket.print_details(*x)
+    x.each { |detail| puts "This ticket is #{detail}"}
+end
 
+def change_string(str)
+    str.replace("New string content!")
+end
 
+s = "Original string content!"
+s.freeze
+change_string(s.clone)
 
-
+puts s

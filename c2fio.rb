@@ -6,3 +6,5 @@ puts "Saving result to output file 'temp.out'"
 fh = File.new("temp.out", "w")
 fh.puts fahrenheit
 fh.close
+
+
